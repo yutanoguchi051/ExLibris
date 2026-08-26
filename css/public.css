@@ -1,8 +1,49 @@
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.site-nav .brand {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: 0.82rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav .nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+}
+
+.site-nav .nav-links a,
+.site-nav .nav-links span {
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+.site-nav .nav-links .current {
+  color: var(--accent-dark);
+}
+
 .site-header {
   padding: 32px 20px 20px;
   max-width: 720px;
   margin: 0 auto;
   text-align: center;
+}
+
+.site-header .kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+  margin: 0 0 20px;
 }
 
 .site-header h1 {
