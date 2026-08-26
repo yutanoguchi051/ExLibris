@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蔵書登録（ローカル専用）</title>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<header class="app-header">
+  <h1>蔵書登録ツール（ローカル専用）</h1>
+  <div class="publish-area">
+    <button id="publish-btn">⬆️ Gitに反映（commit &amp; push）</button>
+  </div>
+</header>
+<div id="publish-status" class="status publish-status"></div>
+
+<main>
+  <section class="panel">
+    <h2>バーコードで登録</h2>
+    <p class="hint">バーコードスキャナ接続時は、下の欄にカーソルを合わせてスキャンしてください（自動でEnterが入力されます）。</p>
+    <form id="isbn-form" class="isbn-form">
+      <input type="text" id="isbn-input" placeholder="ISBNを入力 / スキャン" autocomplete="off" inputmode="numeric">
+      <button type="submit">検索</button>
+      <button type="button" id="manual-btn">ISBNなしで手入力登録</button>
+    </form>
+    <div id="lookup-status" class="status"></div>
+
+    <form id="book-form" class="book-form hidden">
+      <div class="fields">
+        <label>ISBN（任意）<input type="text" id="field-isbn"></label>
+        <label>タイトル <span class="required">*</span><input type="text" id="field-title" required></label>
+        <label>著者<input type="text" id="field-author"></label>
+        <label>発行年<input type="text" id="field-year" placeholder="例: 2020"></label>
+        <label>タグ（カンマ区切り）<input type="text" id="field-tags" placeholder="例: 機械学習, Python"></label>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="primary">この内容で登録する</button>
+        <button type="button" id="cancel-form-btn">キャンセル</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="panel">
+    <h2>登録済み一覧・タグ編集</h2>
+    <div class="toolbar">
+      <input type="search" id="search-input" placeholder="タイトル・著者・ISBN・タグで検索">
+      <button id="reload-btn">🔄 再読み込み</button>
+    </div>
+    <div id="list-count" class="book-count"></div>
+    <table id="book-table">
+      <thead>
+        <tr>
+          <th>タイトル</th>
+          <th>著者</th>
+          <th>発行年</th>
+          <th>ISBN</th>
+          <th>タグ</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="book-table-body"></tbody>
+    </table>
+  </section>
+</main>
+
+<div id="detail-modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="detail-close-btn" class="modal-close">×</button>
+    <div class="fields">
+      <label>ISBN（任意）<input type="text" id="detail-isbn"></label>
+      <label>タイトル<input type="text" id="detail-title"></label>
+      <label>著者<input type="text" id="detail-author"></label>
+      <label>発行年<input type="text" id="detail-year"></label>
+      <label>タグ（カンマ区切り）<input type="text" id="detail-tags"></label>
+    </div>
+    <div id="detail-status" class="status"></div>
+    <div class="form-actions">
+      <button id="detail-save-btn" class="primary">保存</button>
+      <button id="detail-delete-btn" class="danger">削除</button>
+    </div>
+  </div>
+</div>
+
+<script src="/admin/lookup.js"></script>
+<script src="/admin/admin.js"></script>
+</body>
+</html>

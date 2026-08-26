@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蔵書リスト</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/public.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>蔵書リスト</h1>
+  <!-- 紹介文はここを自由に書き換えてください -->
+  <p class="intro">
+    個人の蔵書を公開しています。重複購入を避けるための確認用に、また関心のある分野の本を探す「選書リスト」としてもご利用ください。
+  </p>
+</header>
+
+<main>
+  <div class="search-bar">
+    <input type="search" id="search-input" placeholder="タイトル・著者・ISBN・タグで検索">
+  </div>
+
+  <div id="tag-filter" class="tag-filter"></div>
+
+  <div class="list-toolbar">
+    <div id="book-count" class="book-count"></div>
+    <div class="sort-buttons">
+      <button id="sort-title-btn" class="sort-btn active">タイトル順</button>
+      <button id="sort-year-btn" class="sort-btn">発行年順</button>
+    </div>
+  </div>
+
+  <div id="book-list" class="book-list"></div>
+  <p id="empty-message" class="status hidden">該当する本が見つかりませんでした。</p>
+</main>
+
+<footer class="site-footer">
+  <p class="hint">最終更新: <span id="last-updated">-</span></p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

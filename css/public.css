@@ -1,0 +1,125 @@
+.site-header {
+  padding: 32px 20px 20px;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.site-header h1 {
+  font-size: 1.7rem;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+
+.site-header .intro {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+main { max-width: 720px; }
+
+.search-bar { margin-bottom: 12px; }
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel);
+}
+
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tag-chip {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.tag-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.list-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.sort-buttons { display: flex; gap: 6px; }
+
+.sort-btn {
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sort-btn.active {
+  background: var(--accent-dark);
+  color: #fff;
+  border-color: var(--accent-dark);
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.book-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-top: none;
+  padding: 14px 18px;
+}
+
+.book-item:first-child { border-top: 1px solid var(--border); border-radius: 8px 8px 0 0; }
+.book-item:last-child { border-radius: 0 0 8px 8px; }
+.book-item:only-child { border-radius: 8px; }
+
+.book-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.book-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.book-isbn {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.book-tags { margin-top: 6px; }
+
+.site-footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
