@@ -2,24 +2,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px 0;
-  max-width: 720px;
+  padding: 24px 32px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .site-nav .brand {
   font-weight: 600;
-  letter-spacing: 0.06em;
-  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
   color: var(--text);
   text-decoration: none;
 }
 
 .site-nav .nav-links {
   display: flex;
-  gap: 22px;
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
+  gap: 28px;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
 }
 
 .site-nav .nav-links a,
@@ -29,7 +29,7 @@
 }
 
 .site-nav .nav-links .current {
-  color: var(--accent-dark);
+  color: var(--text);
 }
 
 .site-header {
