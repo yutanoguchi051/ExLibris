@@ -1,6 +1,6 @@
 (() => {
   const el = (id) => document.getElementById(id);
-  const state = { books: [], query: '', activeTag: null, sort: 'title' };
+  const state = { books: [], query: '', activeTag: null, sort: 'year' };
 
   async function init() {
     try {
@@ -67,10 +67,13 @@
       const item = document.createElement('div');
       item.className = 'book-item';
 
+      const main = document.createElement('div');
+      main.className = 'book-main';
+
       const title = document.createElement('div');
       title.className = 'book-title';
       title.textContent = book.title || '';
-      item.appendChild(title);
+      main.appendChild(title);
 
       const metaParts = [];
       if (book.author) metaParts.push(book.author);
@@ -79,15 +82,17 @@
         const meta = document.createElement('div');
         meta.className = 'book-meta';
         meta.textContent = metaParts.join(' ・ ');
-        item.appendChild(meta);
+        main.appendChild(meta);
       }
 
       if (book.isbn) {
         const isbnEl = document.createElement('div');
         isbnEl.className = 'book-isbn';
         isbnEl.textContent = 'ISBN: ' + book.isbn;
-        item.appendChild(isbnEl);
+        main.appendChild(isbnEl);
       }
+
+      item.appendChild(main);
 
       if ((book.tags || []).length) {
         const tagsEl = document.createElement('div');

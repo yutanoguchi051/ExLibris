@@ -1,3 +1,9 @@
+:root {
+  --list-accent: #e5484d;
+  --list-accent-tint: #fdecea;
+  --list-accent-text: #c23b34;
+}
+
 .site-nav {
   display: flex;
   justify-content: space-between;
@@ -90,8 +96,8 @@ main { max-width: 720px; }
 }
 
 .tag-chip.active {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--list-accent);
+  border-color: var(--list-accent);
   color: #fff;
 }
 
@@ -116,9 +122,9 @@ main { max-width: 720px; }
 }
 
 .sort-btn.active {
-  background: var(--accent-dark);
+  background: var(--list-accent);
   color: #fff;
-  border-color: var(--accent-dark);
+  border-color: var(--list-accent);
 }
 
 .book-list {
@@ -128,10 +134,19 @@ main { max-width: 720px; }
 }
 
 .book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
   background: var(--panel);
   border: 1px solid var(--border);
   border-top: none;
   padding: 14px 18px;
+}
+
+.book-main {
+  flex: 1;
+  min-width: 0;
 }
 
 .book-item:first-child { border-top: 1px solid var(--border); border-radius: 8px 8px 0 0; }
@@ -156,7 +171,17 @@ main { max-width: 720px; }
   font-variant-numeric: tabular-nums;
 }
 
-.book-tags { margin-top: 6px; }
+.book-tags {
+  flex-shrink: 0;
+  max-width: 45%;
+  text-align: right;
+}
+
+.book-tags .tag-badge {
+  background: var(--list-accent-tint);
+  color: var(--list-accent-text);
+  margin: 2px 0 2px 4px;
+}
 
 .site-footer {
   max-width: 720px;
